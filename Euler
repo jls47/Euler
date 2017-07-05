@@ -1,0 +1,191 @@
+import math
+import random
+from random import randint
+
+def sum():
+    ms = 0
+    for i in range(0, 1000):
+        if i % 3 == 0 or i % 5 == 0:
+            ms += i
+
+    print("The sum is " + str(ms))
+
+def fibonacci():
+    newfib = 1
+    fib = 1
+    fibprev = 1
+    sum = 0
+    print(str(1%2))
+    while fib < 4000000:
+        newfib = fib + fibprev
+        fibprev = fib
+        fib = newfib
+
+        if newfib % 2 == 0:
+            sum += newfib
+
+    print("The sum is " + str(sum))
+
+def primefactor():
+    bignum = 600851475143
+    pnum = 0
+    prnum = 0
+    for i in range(2,bignum):
+        prime = False
+        if (bignum % i) == 0:
+            for x in range(2, i):
+                if (i % x) == 0:
+                    print("not prime")
+                    break
+            else:
+                pnum = i
+                print("prime " + str(pnum))
+
+
+
+    print("Biggest prime factor: " + str(pnum))
+
+def palindrome():
+    fnum = 100
+    snum = 100
+    pdrome = 0
+    newdrome = 0
+    num1 = 0
+    num2 = 0
+    drome1 = ""
+    drome2 = ""
+    dromelen = 0
+    for i in range(0, 899):
+        for x in range(0, 899):
+            snum += 1
+            pdrome = fnum * snum
+
+            drome = str(pdrome)
+            dromelen = len(drome)-1
+            for y in range(0, dromelen):
+                if drome[y] != drome[dromelen - y]:
+                    break
+            else:
+                if pdrome >= newdrome:
+                    newdrome = pdrome
+                    num1 = fnum
+                    num2 = snum
+                    continue
+        snum = 100
+        fnum += 1
+
+    print("Largest palindrome: " + str(newdrome) +" made from " + str(num1) + " " + str(num2))
+
+
+def smalmult():
+    num = 2520
+    divable = False
+    while divable == False:
+        num += 1
+        for i in range(11, 20):
+            if num % i != 0:
+
+                break
+        else:
+            print("found it! "+ str(num))
+            divable = True
+
+
+
+def ssd():
+    sumsquare = 0
+    squaresum = 0
+    diff = 0
+    for i in range(1, 101):
+        sumsquare += i ** 2
+        squaresum += i
+    squaresum = squaresum ** 2
+    diff = squaresum-sumsquare
+    print("The difference is " + str(diff))
+
+
+def isprime(num): #What the fuck
+    print(str(num))
+    if num % 2 == 0 and num > 2:
+
+        return False
+    for i in range(3, int(math.sqrt(num)) + 1):
+        if num % i == 0:
+
+            return False
+    print("true")
+    return True
+
+
+def numprime():
+    pnum = 0
+    num = 1
+    found = False
+    while found == False:
+        num += 1
+        if isprime(num) == True:
+            prime = num
+            pnum += 1
+            print("Found prime: " + str(prime) + " at " + str(pnum))
+        if pnum == 10001:
+            print(str(pnum) + "th prime is " + str(prime))
+            found = True
+
+
+def numproduct():
+    num = "7316717653133062491922511967442657474235534919493496983520312774506326239578318016984801869478851843858615607891129494954595017379583319528532088055111254069874715852386305071569329096329522744304355766896648950445244523161731856403098711121722383113622298934233803081353362766142828064444866452387493035890729629049156044077239071381051585930796086670172427121883998797908792274921901699720888093776657273330010533678812202354218097512545405947522435258490771167055601360483958644670632441572215539753697817977846174064955149290862569321978468622482839722413756570560574902614079729686524145351004748216637048440319989000889524345065854122758866688116427171479924442928230863465674813919123162824586178664583591245665294765456828489128831426076900422421902267105562632111110937054421750694165896040807198403850962455444362981230987879927244284909188845801561660979191338754992005240636899125607176060588611646710940507754100225698315520005593572972571636269561882670428252483600823257530420752963450"
+
+    bp = 0
+    np = 0
+    mult1 = 0
+    mult2 = 1
+    mult3 = 0
+    mult4 = 0
+    for i in range(0, (len(num)-13)):
+        for x in range(0, 12):
+            print(num[i+x])
+            if x == 12:
+                print("oops")
+            if x == 0:
+                mult1 = (int(num[i + x]))
+                mult2 = int(num[i + x + 1])
+                mult3 = mult2 * mult1
+            else:
+                mult3 = mult3 * int(num[i + x + 1])
+
+            print(str(mult3) + "mult3")
+            if mult3 > mult4:
+                mult4 = mult3
+    print(str(mult4) + "largest")
+
+
+
+def loop():
+    for int in range(1, 14):
+        print(str(int))
+
+
+def pythag():
+    a = 1
+    b = 2
+    c = 0
+    prod = 0
+    for int in range(1, 500):
+        a += 1
+        b = a
+        for i in range(a, 500):
+            b += 1
+            if(math.sqrt((a**2) + (b**2)) % 1 == 0):
+                c = math.sqrt((a**2) + (b**2))
+                if (a + b + c) == 1000.0:
+                    prod = a * b * c
+                    print("Found it.  Product is: " + str(prod))
+                    quit()
+
+
+
+def pythonchallenge():
+
+
+
+
