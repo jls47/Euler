@@ -260,10 +260,17 @@ def collatz():
         num += 1
 
 
-collatz()
+#Barely getting started-I know how to find one path at least
+def latticePaths(n1):
+    x1 = 0
+    x2 = 0
+    pathnum = 0
+
+    while(x1 != n1 and x2 != n1):
+        dir = int(random.randint(0, 1))
 
 
-
+latticePaths(2)
 
 
 
