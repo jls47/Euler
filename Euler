@@ -197,7 +197,39 @@ def millionPrimes():
 
     print("The sum is " + str(psum))
 
-millionPrimes()
+#How the hell do I properly read the file
+def gridProduct():
+    nums = [];
+    with open('euler.txt', 'r') as f:
+        for a in f:
+            print(a)
+
+
+#This took damn forever.  I need a bigger CPU
+def triangleNumbers():
+    rightnum = False
+    num = 1
+    tri = 0
+    while (rightnum == False):
+        divisors = 0
+        for x in range(1, num):
+            tri += x
+
+        print(str(tri) + ' tri')
+        for x in range(1, tri):
+            if tri % x == 0:
+                divisors += 1
+            if divisors + 1 >= 500:
+                return tri
+                break
+        print(str(divisors + 1) + ' divisors')
+        num += 1
+        print(str(num) + ' num')
+        tri = 0
+
+
+
+triangleNumbers()
 
 
 
