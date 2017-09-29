@@ -205,7 +205,7 @@ def gridProduct():
             print(a)
 
 
-#This took damn forever.  I need a bigger CPU
+#This took damn forever.  I need a bigger CPU or to take a few more math classes.
 def triangleNumbers():
     rightnum = False
     num = 1
@@ -224,12 +224,46 @@ def triangleNumbers():
                 break
         print(str(divisors + 1) + ' divisors')
         num += 1
-        print(str(num) + ' num')
+
         tri = 0
 
+def bigsum():
+    bigsum = 0
+    with open('euler.txt', 'r') as ns:
+        for num in ns:
+            print(num)
+            bigsum += int(num)
+    print(bigsum)
 
 
-triangleNumbers()
+def collatz():
+    num = 13
+    seqnum = 0
+    pastseqnum = 0
+    biggestseqnum = 0
+    biggestcolnum = 0
+    while (num <= 1000000):
+        colnum = num
+        pastseqnum = seqnum
+        seqnum = 0
+        while(colnum != 1):
+            if(colnum % 2 == 0):
+                colnum = colnum/2
+                seqnum += 1
+            else:
+                colnum = (3 * colnum) + 1
+                seqnum += 1
+        if(seqnum > biggestseqnum):
+            biggestcolnum = num
+            biggestseqnum = seqnum
+            print(str(biggestcolnum) + ' biggest')
+        num += 1
+
+
+collatz()
+
+
+
 
 
 
