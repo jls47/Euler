@@ -270,8 +270,17 @@ def latticePaths(n1):
         dir = int(random.randint(0, 1))
 
 
-latticePaths(2)
 
+
+def powerDigitSum(n):
+    digits = str(2 ** n)
+    num = 0
+    for i in digits:
+        num += int(i)
+
+    print(num)
+
+powerDigitSum(1000)
 
 
 
